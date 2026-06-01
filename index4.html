@@ -1,0 +1,1222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deepika Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#07111f;
+    color:white;
+    font-family:'Poppins',sans-serif;
+    overflow:hidden;
+}
+
+#particles-js{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+.container{
+    display:flex;
+    height:100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    position:sticky;
+    top:0;
+    height:100vh;
+    width:320px;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(18px);
+    border-right:1px solid rgba(255,255,255,0.08);
+    padding:30px;
+    overflow-y:auto;
+    flex-shrink:0;
+}
+
+.profile-section{
+    text-align:center;
+}
+
+.profile-section img{
+    width:180px;
+    height:220px;
+    object-fit:cover;
+    border-radius:50%;
+    border:4px solid #00f7ff;
+    box-shadow:0 0 35px #00f7ff;
+}
+
+.profile-section h1{
+    margin-top:20px;
+    font-size:35px;
+    font-family:'Orbitron',sans-serif;
+}
+
+.typing{
+    color:#00f7ff;
+    margin:10px 0;
+}
+
+.profile-section p{
+    font-size:14px;
+    line-height:1.7;
+    opacity:0.8;
+}
+
+.social-icons{
+    margin-top:20px;
+}
+
+.social-icons a{
+    color:white;
+    margin:0 10px;
+    font-size:22px;
+    transition:0.4s;
+}
+
+.social-icons a:hover{
+    color:#00f7ff;
+}
+
+.resume-btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:14px 25px;
+    background:#00f7ff;
+    color:black;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+}
+
+nav{
+    margin-top:40px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.nav-btn{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px;
+    border:none;
+    background:rgba(255,255,255,0.05);
+    border-radius:12px;
+    color:white;
+    cursor:pointer;
+    text-align:left;
+    transition:0.4s;
+}
+
+.nav-btn:hover,
+.nav-btn.active{
+    background:#00f7ff;
+    color:black;
+    transform:translateX(8px);
+}
+
+/* MAIN */
+
+.main-content{
+    flex:1;
+    overflow-y:auto;
+    padding:50px;
+}
+
+.page{
+    display:none;
+    animation:fade 0.5s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* HOME */
+
+.hero{
+    margin-top:120px;
+}
+
+.hero h2{
+    font-size:65px;
+    line-height:1.2;
+    width:75%;
+    font-family:'Orbitron',sans-serif;
+}
+
+.hero p{
+    width:60%;
+    margin-top:20px;
+    line-height:1.9;
+    opacity:0.85;
+}
+
+.hero-buttons{
+    margin-top:35px;
+}
+
+.hero-buttons button{
+    padding:15px 30px;
+    margin-right:15px;
+    border:none;
+    border-radius:30px;
+    background:#00f7ff;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.title{
+    font-size:45px;
+    margin-bottom:30px;
+    font-family:'Orbitron',sans-serif;
+    color:#00f7ff;
+}
+
+.glass-card{
+    background:rgba(255,255,255,0.05);
+    padding:30px;
+    border-radius:20px;
+}
+
+.about-grid,
+.skills-grid,
+.project-grid,
+.certificate-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.info-box,
+.skill-card,
+.project-card,
+.certificate-card{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.project-card:hover,
+.skill-card:hover,
+.certificate-card:hover,
+.info-box:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(0,247,255,0.2);
+}
+
+.bar{
+    width:100%;
+    height:10px;
+    background:#222;
+    border-radius:20px;
+    margin-top:15px;
+}
+
+.bar span{
+    display:block;
+    height:100%;
+    background:#00f7ff;
+    border-radius:20px;
+}
+
+.project-buttons{
+    margin-top:20px;
+    display:flex;
+    gap:15px;
+}
+
+.project-buttons a{
+    padding:10px 18px;
+    background:#00f7ff;
+    color:black;
+    text-decoration:none;
+    border-radius:25px;
+}
+
+.timeline{
+    border-left:3px solid #00f7ff;
+    padding-left:25px;
+}
+
+.timeline-item{
+    margin-bottom:30px;
+}
+
+.contact-card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+form input,
+form textarea{
+    background:rgba(255,255,255,0.05);
+    border:none;
+    padding:15px;
+    border-radius:12px;
+    color:white;
+}
+
+form textarea{
+    height:150px;
+    resize:none;
+}
+
+form button{
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#00f7ff;
+    font-weight:600;
+    cursor:pointer;
+}
+
+@media(max-width:900px){
+
+    body{
+        overflow:auto;
+    }
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+
+    .hero h2,
+    .hero p{
+        width:100%;
+    }
+
+    .contact-card{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+/* LOADER */
+
+#loader{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:#07111f;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    flex-direction:column;
+}
+
+.loader-ring{
+    width:80px;
+    height:80px;
+    border:5px solid rgba(255,255,255,0.1);
+    border-top:5px solid #00f7ff;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* THEME TOGGLE */
+
+.theme-toggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#00f7ff;
+    color:black;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    z-index:999;
+    font-size:20px;
+}
+
+body.light{
+    background:#f4f7fb;
+    color:#111;
+}
+
+body.light .sidebar,
+body.light .glass-card,
+body.light .info-box,
+body.light .skill-card,
+body.light .project-card,
+body.light .certificate-card,
+body.light form input,
+body.light form textarea{
+    background:rgba(0,0,0,0.05);
+    color:#111;
+}
+
+/* CURSOR GLOW */
+
+.cursor-glow{
+    position:fixed;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#00f7ff;
+    pointer-events:none;
+    filter:blur(12px);
+    z-index:9999;
+}
+
+/* SCROLL BAR */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#00f7ff;
+    border-radius:10px;
+}
+
+.skill-list{
+    margin-top:20px;
+    padding-left:18px;
+    line-height:2;
+}
+
+.skill-list li{
+    margin-bottom:8px;
+    opacity:0.9;
+}
+
+.certificate-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+
+.certificate-card{
+    background:rgba(255,255,255,0.05);
+    padding:20px;
+    border-radius:15px;
+    text-decoration:none;
+    color:white;
+    line-height:1.8;
+    transition:0.4s;
+    display:block;
+}
+
+.certificate-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(0,247,255,0.2);
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="loader">
+<div class="loader-ring"></div>
+<br>
+<h2 style="font-family:Orbitron">Loading Portfolio...</h2>
+</div>
+
+<div class="theme-toggle" onclick="toggleTheme()">
+<i class="fa fa-moon"></i>
+</div>
+
+<div class="cursor-glow"></div>
+
+<div id="particles-js"></div>
+
+<div class="container">
+
+<aside class="sidebar">
+
+<div class="profile-section">
+
+<img src="profile.jpg" alt="profile">
+
+<h1>Deepika N</h1>
+
+<h3 class="typing"></h3>
+
+<p>
+Passionate Cybersecurity Enthusiast & Frontend Developer focused on futuristic digital experiences.
+</p>
+
+
+<div class="social-icons">
+
+<a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME" target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+
+</div>
+
+
+
+<nav>
+
+<button class="nav-btn active" onclick="showPage('home')"><i class="fa fa-house"></i> Home</button>
+<button class="nav-btn" onclick="showPage('about')"><i class="fa fa-user"></i> About</button>
+<button class="nav-btn" onclick="showPage('skills')"><i class="fa fa-code"></i> Skills</button>
+<button class="nav-btn" onclick="showPage('projects')"><i class="fa fa-laptop-code"></i> Projects</button>
+<button class="nav-btn" onclick="showPage('education')"><i class="fa fa-graduation-cap"></i> Education</button>
+<button class="nav-btn" onclick="showPage('courses')"><i class="fa fa-book"></i> Courses</button>
+<button class="nav-btn" onclick="showPage('certificates')"><i class="fa fa-certificate"></i>  Awards & Certificates</button>
+<button class="nav-btn" onclick="showPage('experience')"><i class="fa fa-briefcase"></i> Experience</button>
+<button class="nav-btn" onclick="showPage('contact')"><i class="fa fa-envelope"></i> Contact</button>
+
+</nav>
+
+</aside>
+
+<main class="main-content">
+
+<!-- HOME -->
+<section class="page" id="home">
+
+<div class="hero">
+
+<h2>
+Building Secure & Futuristic Experiences
+</h2>
+
+<p>
+I design interactive websites, cybersecurity solutions and modern developer experiences with clean UI and powerful functionality.
+</p>
+
+<div class="hero-buttons">
+<button onclick="showPage('contact')">Hire Me</button>
+<button onclick="showPage('projects')">View Projects</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="about">
+
+<h2 class="title">About Me</h2>
+
+<div class="glass-card">
+    <div class="glass-card" style="margin-top:30px; grid-column:1/-1;">
+
+<h3 style="color:#00f7ff; margin-bottom:25px; font-size:28px;">
+<i class="fa fa-star"></i> Strengths
+</h3>
+
+<ul class="skill-list">
+
+<li>Leadership</li>
+<li>Active Listening</li>
+<li>Attention to Detail</li>
+<li>Problem Solving</li>
+<li>Hard Working</li>
+<li>Ethics</li>
+<li>Decision Making</li>
+<li>Honesty</li>
+<li>Patience</li>
+
+</ul>
+
+</div>
+<br><br>
+<p>
+I am a passionate developer with strong interest in cybersecurity, frontend development and futuristic UI design. I enjoy solving technical problems and building impactful digital solutions.
+</p>
+
+<br>
+
+<div class="about-grid">
+
+<div class="info-box">
+<h3>Name</h3>
+<p>Deepika N</p>
+</div>
+
+<div class="info-box">
+<h3>Email</h3>
+<p>deepikan4uindia@gmail.com</p>
+</div>
+
+<div class="info-box">
+<h3>Location</h3>
+<p>Karnataka, India</p>
+</div>
+
+<div class="info-box">
+<h3>Languages</h3>
+<p>Kannada, English, Telugu, Hindi</p>
+</div>
+
+</div>
+
+</div>
+
+
+</section>
+
+<!-- SKILLS -->
+<section class="page" id="skills">
+
+<h2 class="title">Skills</h2>
+
+<div class="skills-grid">
+
+<div class="skill-card">
+
+<h3>
+<i class="fa-brands fa-html5"></i>
+HTML
+</h3>
+
+<ul class="skill-list">
+<li>Good Knowledge on HTML</li>
+
+</ul>
+
+</div>
+
+<div class="skill-card">
+
+<h3>
+<i class="fa-brands fa-css3-alt"></i>
+CSS
+</h3>
+
+<ul class="skill-list">
+<li>Good Knowledge on CSS</li>
+
+</ul>
+
+</div>
+
+<div class="skill-card">
+
+<h3>
+<i class="fa-brands fa-js"></i>
+JavaScript
+</h3>
+
+<ul class="skill-list">
+<li>Basic Knowledge on JAVASCRIPT</li>
+
+</ul>
+
+</div>
+
+<div class="skill-card">
+
+<h3>
+<i class="fa-brands fa-python"></i>
+Python
+</h3>
+
+<ul class="skill-list">
+<li>Basic Knowledge on Python</li>
+
+</ul>
+
+</div>
+<div class="skill-card">
+
+<h3>
+<i class="fa-solid fa-mug-hot"></i>
+ CORE JAVA
+</h3>
+
+<ul class="skill-list">
+<li> Strong  Knowledge on OOP'S concepts</li>
+<li> Good Knowledge on Static & Non-Static,Acess Specifiers,Constructor</li>
+<li> Good Knowledge on Method-Oveloading,Method-Overriding</li>
+<li> Good Knowledge on Arrays,Typecasting
+    ,Polymorphism</li>
+
+</ul>
+
+</div>
+
+<div class="skill-card">
+
+<h3>
+<i class="fa-solid fa-database"></i>
+ SQL
+</h3>
+
+<ul class="skill-list">
+<li> Good Knowledge on DBMS & RDBMS concepts</li>
+<li> Good Knowledge on DQL,DDL,DML,DCL,TCL</li>
+<li> Good Knowledge on Functions,creating Views</li>
+<li> Good Knowledge on Sub-Queries</li>
+<li> Good Knowledge on Joins</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+<!-- PROJECTS -->
+<section class="page" id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="project-grid">
+
+<div class="project-card">
+<h3>Modern Portfolio</h3> <br>
+<p>Interactive futuristic personal portfolio website.</p>
+<div class="project-buttons">
+<a href="#">Live Demo</a>
+<a href="#">GitHub</a>
+</div>
+</div>
+
+<div class="project-card">
+<h3>CyberResilience Lab-Cyber Behavioral Risk Assessment & Psychological Defence 
+System App</h3> <br>
+<p>This project helps users identify and resist modern cyber threats through awareness, 
+simulation, and behavioral analysis.It  not only improves cybersecurity knowledge but 
+also strengthens psychological resistance against manipulation techniques used by 
+cybercriminals. Thus, the system contributes towards building safer, smarter, and more 
+cyber-resilient digital users.</p>
+<div class="project-buttons">
+<a href="#">Live Demo</a>
+<a href="#">GitHub</a>
+</div>
+</div>
+
+<div class="project-card">
+<h3>Intrusion Detection and Prevention in Web Servers</h3>
+<br>
+<p>The main aim of this project is to prevent the vulnerable virtual machines from being 
+compromised in the cloud server using multi-phase distributed vulnerability detection, 
+measurement, and countermeasure selection mechanism called NICE.</p>
+<div class="project-buttons">
+<a href="#">Live Demo</a>
+<a href="#">GitHub</a>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+<section class="page" id="education">
+
+<h2 class="title">Education</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Master of Computer Applications[MCA]</h3>
+<p>K.L.E Society's S.Nijalingappa College</p>
+<p>Cgpa:8.77( pursuing 2nd yr)</p>
+<span>2024 - 2026</span>
+</div>
+
+<div class="timeline-item">
+<h3>Bachelor of Computer Applications[BCA]</h3>
+<p>Vasavi jnana peetha first grade college</p>
+<p>Cgpa:8.85</p>
+<span>2021 - 2024</span>
+</div>
+
+<div class="timeline-item">
+<h3>Diploma in Computer Science[CS]</h3>
+<p>P. V. P. Polytechnic</p>
+<p>Percentage:69.78%</p>
+<span>2013 - 2016</span>
+</div>
+
+<div class="timeline-item">
+<h3>SSLC</h3>
+<p>Svs English High School</p>
+<p>Percentage:80.64%</p>
+<span>2013</span>
+</div>
+
+</div>
+
+</section>
+<!-- COURSES -->
+<section class="page" id="courses">
+
+<h2 class="title">Courses</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>Advanced Java Course</h3>
+<p>Glovish Technologies</p>
+<span>12/2023 – 03/2024 | Bangalore, India</span>
+</div>
+
+<div class="timeline-item">
+<h3>Magic Bus - Connect With Work Programme</h3>
+<p>Landmark Group (Magic Bus)</p>
+<p>7 Days Program Regarding Personality Development</p>
+<span>2024 | Bangalore, India</span>
+</div>
+
+<div class="timeline-item">
+<h3>DCSP</h3>
+<p>HiIt Computer Education</p>
+
+<p>
+Computer fundamentals, MS-DOS, MS-Windows XP/7,
+MS-Office 2003/2007, Internet, Tally 7.2 & ERP,
+Nudi, Kannada Baraha, Pacemaker, Photoshop,
+Coral Draw and Typing
+</p>
+
+<span>04/2013 – 03/2014 | Bangalore, India</span>
+
+</div>
+
+</div>
+
+</section>
+
+
+<<!-- CERTIFICATES -->
+<section class="page" id="certificates">
+
+<h2 class="title">Awards & Certificates</h2>
+
+<div class="certificate-grid">
+
+<a href="./certificates/certificates/elocution.png" target="_blank" class="certificate-card">
+<b>1st Prize</b><br>
+K.L.E S.Nijalingappa College <br>
+First prize in <br>
+Kannada Elocution at Inter Department Cultural Competition
+</a>
+
+<a href="certificates/volleyball.jpg" target="_blank" class="certificate-card">
+<b>1st Prize</b><br>
+K.L.E Society's S.Nijalingappa College <br>
+First prize in <br>
+Volleyball at Annual Sports Meet
+</a>
+
+<a href="certificates/kabaddi.jpg" target="_blank" class="certificate-card">
+<b>1st Prize</b><br>
+K.L.E Society's S.Nijalingappa College <br>
+First prize in <br>
+Kabaddi at Annual Sports Meet
+</a>
+
+<a href="certificates/relay.jpg" target="_blank" class="certificate-card">
+<b>2nd Prize</b><br>
+K.L.E S.Nijalingappa College <br>
+Second prize in <br>
+400m Relay (Women) at Annual Sports Meet
+</a>
+
+<a href="certificates/monoacting.jpg" target="_blank" class="certificate-card">
+<b>3rd Prize</b><br>
+K.L.E Society's S.Nijalingappa College <br>
+Third prize in <br>
+Monoacting at Inter Department Cultural Competition
+</a>
+
+<a href="certificates/beststudent.jpg" target="_blank" class="certificate-card">
+<b>Best Student Award</b><br>
+Vasavi Jnana Peetha First Grade College <br>
+Awarded for excellence in Academics, Cultural, Sports, NSS & Leadership
+</a>
+
+<a href="certificates/dumbcharades.jpg" target="_blank" class="certificate-card">
+<b>2nd Prize in Dumbcharades</b><br>
+Vasavi Jnana Peetha First Grade College <br>
+At Inter Collegiate Fest - 2024
+</a>
+
+<a href="certificates/poetry.jpg" target="_blank" class="certificate-card">
+<b>Poetry Reading Participant</b><br>
+Government Arts College Bangalore <br>
+State Level Competition
+</a>
+
+<a href="certificates/parliament.jpg" target="_blank" class="certificate-card">
+<b>MP of Citizen Youth Parliament</b><br>
+Participated as MP in State Level Citizen Youth Parliament
+</a>
+
+<a href="certificates/throwball.jpg" target="_blank" class="certificate-card">
+<b>1st Prize in Throwball</b><br>
+Vasavi Jnana Peetha First Grade College
+</a>
+
+<a href="certificates/nss.jpg" target="_blank" class="certificate-card">
+<b>NSS Special Camp Certificate</b><br>
+7 Days NSS Special Camp Participation
+</a>
+
+<a href="certificates/khokho.jpg" target="_blank" class="certificate-card">
+<b>1st Prize in Kho-Kho</b><br>
+Annual Sports Meet
+</a>
+
+<a href="certificates/debate.jpg" target="_blank" class="certificate-card">
+<b>2nd Prize in Debate</b><br>
+Annual Cultural Activities
+</a>
+
+<a href="certificates/groupdance.jpg" target="_blank" class="certificate-card">
+<b>1st Prize in Group Dance</b><br>
+P.V.P Polytechnic
+</a>
+
+<a href="certificates/running.jpg" target="_blank" class="certificate-card">
+<b>3rd Prize in 100m Running Race</b><br>
+P.V.P Polytechnic
+</a>
+
+<a href="certificates/singing.jpg" target="_blank" class="certificate-card">
+<b>2nd Prize in Non-Filmy Singing</b><br>
+P.V.P Polytechnic
+</a>
+
+<a href="certificates/schoolkhokho.jpg" target="_blank" class="certificate-card">
+<b>1st Prize in Kho-Kho</b><br>
+S.V.S English High School
+</a>
+
+</div>  
+
+</section>
+
+<!-- EXPERIENCE -->
+<section class="page" id="experience">
+
+<h2 class="title">Professional Experience</h2>
+
+<div class="glass-card">
+<h3>Glovish Technologies LLP</h3>
+<br>
+<p>Internship</p>
+<p>Internship on Smart Home (Home Automation)</p>
+</div>
+ <br>
+<br>
+
+<div class="glass-card">
+<h3>Sharada Designs Pvt.Ltd</h3>
+<br>
+<p>Employee</p>
+<p>Store Incharge and Merchandiser</p>
+</div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="contact">
+
+<h2 class="title">Contact Me</h2>
+
+<div class="contact-card">
+
+<div class="glass-card">
+<h3>Email</h3>
+<p>deepikan4uindia@gmail.com</p>
+<br>
+<h3>Phone</h3>
+<p>+91 7204089702</p>
+<br>
+<h3>Location</h3>
+<p>Karnataka, India</p>
+</div>
+
+<form id="contact-form">
+
+<input type="text" 
+name="from_name" 
+placeholder="Your Name" 
+required>
+
+<input type="email" 
+name="from_email" 
+placeholder="Your Email" 
+required>
+
+<textarea 
+name="message" 
+placeholder="Your Message"
+required></textarea>
+
+<button type="submit">Send Message</button>
+
+</form> 
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script>
+
+// SHOW PAGE FUNCTION
+
+function showPage(pageId){
+
+    const pages = document.querySelectorAll('.page');
+
+    pages.forEach(page => {
+        page.style.display = 'none';
+    });
+
+    document.getElementById(pageId).style.display = 'block';
+
+    const buttons = document.querySelectorAll('.nav-btn');
+
+    buttons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    event?.target?.classList?.add('active');
+
+}
+
+// DEFAULT PAGE
+
+showPage('home');
+
+// TYPING EFFECT
+
+new Typed('.typing', {
+
+    strings:[
+        'Cybersecurity Enthusiast',
+        'Frontend Developer',
+        'Creative Thinker',
+        'Problem Solver'
+    ],
+
+    typeSpeed:60,
+    backSpeed:40,
+    loop:true
+
+});
+
+// PARTICLES
+
+particlesJS('particles-js', {
+
+    particles: {
+
+        number: {
+            value: 80
+        },
+
+        color: {
+            value: '#00f7ff'
+        },
+
+        shape: {
+            type: 'circle'
+        },
+
+        opacity: {
+            value: 0.5
+        },
+
+        size: {
+            value: 3
+        },
+
+        move: {
+            enable: true,
+            speed: 2
+        },
+
+        line_linked: {
+            enable: true,
+            color: '#00f7ff'
+        }
+
+    }
+
+});
+
+// LOADER
+
+window.addEventListener('load', () => {
+
+    setTimeout(() => {
+
+        document.getElementById('loader').style.display = 'none';
+
+    }, 1500);
+
+});
+
+// THEME TOGGLE
+
+function toggleTheme(){
+
+    document.body.classList.toggle('light');
+
+}
+
+// CURSOR GLOW
+
+const glow = document.querySelector('.cursor-glow');
+
+window.addEventListener('mousemove', (e) => {
+
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+
+});
+
+// 3D CARD EFFECT
+
+const cards = document.querySelectorAll(
+'.project-card, .skill-card, .certificate-card, .info-box'
+);
+
+cards.forEach(card => {
+
+    card.addEventListener('mousemove', (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const rotateY = ((x / rect.width) - 0.5) * 15;
+        const rotateX = ((y / rect.height) - 0.5) * -15;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.03)`;
+
+    });
+
+    card.addEventListener('mouseleave', () => {
+
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+
+    });
+
+});
+
+// FORM
+
+document.querySelector('form').addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    alert('Message Sent Successfully!');
+
+});
+
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+</script>
+
+<script>
+
+// EMAILJS
+
+emailjs.init("YOUR_PUBLIC_KEY");
+
+document
+.getElementById("contact-form")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+emailjs.sendForm(
+"YOUR_SERVICE_ID",
+"YOUR_TEMPLATE_ID",
+this
+)
+
+.then(function(){
+
+alert("Message Sent Successfully!");
+
+document
+.getElementById("contact-form")
+.reset();
+
+},
+
+function(error){
+
+alert("Failed to send message");
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
+
+```
