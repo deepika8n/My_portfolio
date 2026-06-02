@@ -458,6 +458,70 @@ body.light form textarea{
     transform:translateY(-8px);
     box-shadow:0 0 25px rgba(0,247,255,0.2);
 }
+
+/* COURSES */
+
+.courses-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.course-card{
+    background:rgba(255,255,255,0.05);
+    padding:25px;
+    border-radius:18px;
+    cursor:pointer;
+    transition:0.4s;
+    line-height:1.8;
+}
+
+.course-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 25px rgba(0,247,255,0.25);
+}
+
+/* IMAGE POPUP */
+
+.image-popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100vh;
+    background:rgba(0,0,0,0.92);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+}
+
+.image-popup img{
+    max-width:85%;
+    max-height:85vh;
+    border-radius:15px;
+    animation:zoomIn 0.4s ease;
+}
+
+@keyframes zoomIn{
+    from{
+        transform:scale(0.5);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.close-popup{
+    position:absolute;
+    top:25px;
+    right:40px;
+    font-size:50px;
+    color:white;
+    cursor:pointer;
+}
 </style>
 
 </head>
@@ -798,37 +862,60 @@ measurement, and countermeasure selection mechanism called NICE.</p>
 
 </section>
 <!-- COURSES -->
+<!-- COURSES -->
 <section class="page" id="courses">
 
 <h2 class="title">Courses</h2>
 
-<div class="timeline">
+<div class="courses-grid">
 
-<div class="timeline-item">
+<!-- COURSE 1 -->
+<div class="course-card" onclick="openImage('./certificates/java-course.png')">
+
 <h3>Advanced Java Course</h3>
+
 <p>Glovish Technologies</p>
-<span>12/2023 – 03/2024 | Bangalore, India</span>
+
+<span>
+12/2023 – 03/2024 | Bangalore, India
+</span>
+
 </div>
 
-<div class="timeline-item">
-<h3>Magic Bus - Connect With Work Programme</h3>
+<!-- COURSE 2 -->
+<div class="course-card" onclick="openImage('./certificates/magicbus.png')">
+
+<h3>Magic Bus – Connect With Work Programme</h3>
+
 <p>Landmark Group (Magic Bus)</p>
-<p>7 Days Program Regarding Personality Development</p>
-<span>2024 | Bangalore, India</span>
+
+<p>
+7 Days Program Regarding Personality Development
+</p>
+
+<span>
+2024 | Bangalore, India
+</span>
+
 </div>
 
-<div class="timeline-item">
+<!-- COURSE 3 -->
+<div class="course-card" onclick="openImage('./certificates/dcsp.png')">
+
 <h3>DCSP</h3>
-<p>HiIt Computer Education</p>
+
+<p>Hiit Computer Education</p>
 
 <p>
 Computer fundamentals, MS-DOS, MS-Windows XP/7,
 MS-Office 2003/2007, Internet, Tally 7.2 & ERP,
-Nudi, Kannada Baraha, Pacemaker, Photoshop,
+Nudi, Kannada Baraha, Pagemaker, Photoshop,
 Coral Draw and Typing
 </p>
 
-<span>04/2013 – 03/2014 | Bangalore, India</span>
+<span>
+04/2013 – 03/2014 | Bangalore, India
+</span>
 
 </div>
 
@@ -844,100 +931,100 @@ Coral Draw and Typing
 
 <div class="certificate-grid">
 
-<a href="./certificates/certificates/elocution.png" target="_blank" class="certificate-card">
+<a href="./certificates/elocution.png" target="_blank" class="certificate-card">
 <b>1st Prize</b><br>
 K.L.E S.Nijalingappa College <br>
 First prize in <br>
 Kannada Elocution at Inter Department Cultural Competition
 </a>
 
-<a href="certificates/volleyball.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/volleyball.png" target="_blank" class="certificate-card">
 <b>1st Prize</b><br>
 K.L.E Society's S.Nijalingappa College <br>
 First prize in <br>
 Volleyball at Annual Sports Meet
 </a>
 
-<a href="certificates/kabaddi.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/kabaddi.png" target="_blank" class="certificate-card">
 <b>1st Prize</b><br>
 K.L.E Society's S.Nijalingappa College <br>
 First prize in <br>
 Kabaddi at Annual Sports Meet
 </a>
 
-<a href="certificates/relay.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/relay.png" target="_blank" class="certificate-card">
 <b>2nd Prize</b><br>
 K.L.E S.Nijalingappa College <br>
 Second prize in <br>
 400m Relay (Women) at Annual Sports Meet
 </a>
 
-<a href="certificates/monoacting.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/monoacting.png" target="_blank" class="certificate-card">
 <b>3rd Prize</b><br>
 K.L.E Society's S.Nijalingappa College <br>
 Third prize in <br>
 Monoacting at Inter Department Cultural Competition
 </a>
 
-<a href="certificates/beststudent.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/beststudent.png" target="_blank" class="certificate-card">
 <b>Best Student Award</b><br>
 Vasavi Jnana Peetha First Grade College <br>
 Awarded for excellence in Academics, Cultural, Sports, NSS & Leadership
 </a>
 
-<a href="certificates/dumbcharades.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/dumbcharades.png" target="_blank" class="certificate-card">
 <b>2nd Prize in Dumbcharades</b><br>
 Vasavi Jnana Peetha First Grade College <br>
 At Inter Collegiate Fest - 2024
 </a>
 
-<a href="certificates/poetry.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/poetry.png" target="_blank" class="certificate-card">
 <b>Poetry Reading Participant</b><br>
 Government Arts College Bangalore <br>
 State Level Competition
 </a>
 
-<a href="certificates/parliament.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/parliament.png" target="_blank" class="certificate-card">
 <b>MP of Citizen Youth Parliament</b><br>
 Participated as MP in State Level Citizen Youth Parliament
 </a>
 
-<a href="certificates/throwball.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/throwball.png" target="_blank" class="certificate-card">
 <b>1st Prize in Throwball</b><br>
 Vasavi Jnana Peetha First Grade College
 </a>
 
-<a href="certificates/nss.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/nss.png" target="_blank" class="certificate-card">
 <b>NSS Special Camp Certificate</b><br>
 7 Days NSS Special Camp Participation
 </a>
 
-<a href="certificates/khokho.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/khokho.png" target="_blank" class="certificate-card">
 <b>1st Prize in Kho-Kho</b><br>
 Annual Sports Meet
 </a>
 
-<a href="certificates/debate.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/debate.png" target="_blank" class="certificate-card">
 <b>2nd Prize in Debate</b><br>
 Annual Cultural Activities
 </a>
 
-<a href="certificates/groupdance.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/groupdance.png" target="_blank" class="certificate-card">
 <b>1st Prize in Group Dance</b><br>
 P.V.P Polytechnic
 </a>
 
-<a href="certificates/running.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/running.png" target="_blank" class="certificate-card">
 <b>3rd Prize in 100m Running Race</b><br>
 P.V.P Polytechnic
 </a>
 
-<a href="certificates/singing.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/singing.png" target="_blank" class="certificate-card">
 <b>2nd Prize in Non-Filmy Singing</b><br>
 P.V.P Polytechnic
 </a>
 
-<a href="certificates/schoolkhokho.jpg" target="_blank" class="certificate-card">
+<a href="./certificates/schoolkhokho.png" target="_blank" class="certificate-card">
 <b>1st Prize in Kho-Kho</b><br>
 S.V.S English High School
 </a>
@@ -947,24 +1034,47 @@ S.V.S English High School
 </section>
 
 <!-- EXPERIENCE -->
+<!-- EXPERIENCE -->
 <section class="page" id="experience">
 
 <h2 class="title">Professional Experience</h2>
 
-<div class="glass-card">
+<div class="project-grid">
+
+<!-- EXPERIENCE 1 -->
+
+<div class="project-card"
+onclick="openImage('./certificates/glovish.png')">
+
 <h3>Glovish Technologies LLP</h3>
-<br>
-<p>Internship</p>
-<p>Internship on Smart Home (Home Automation)</p>
-</div>
- <br>
+
 <br>
 
-<div class="glass-card">
-<h3>Sharada Designs Pvt.Ltd</h3>
+<p>Internship</p>
+
+<p>
+Internship on Smart Home (Home Automation)
+</p>
+
+</div>
+
+<!-- EXPERIENCE 2 -->
+
+<div class="project-card"
+onclick="openImage('./certificates/sharada.png')">
+
+<h3>Sharada Designs Pvt. Ltd</h3>
+
 <br>
+
 <p>Employee</p>
-<p>Store Incharge and Merchandiser</p>
+
+<p>
+Store Incharge and Merchandiser
+</p>
+
+</div>
+
 </div>
 
 </section>
@@ -1215,7 +1325,38 @@ alert("Failed to send message");
 });
 
 </script>
+<!-- IMAGE POPUP -->
 
+<div id="imagePopup" class="image-popup">
+
+<span class="close-popup" onclick="closeImage()">
+&times;
+</span>
+
+<img id="popupImage">
+
+</div>
+<script>
+
+// OPEN IMAGE
+
+function openImage(imageSrc){
+
+    document.getElementById("imagePopup").style.display = "flex";
+
+    document.getElementById("popupImage").src = imageSrc;
+
+}
+
+// CLOSE IMAGE
+
+function closeImage(){
+
+    document.getElementById("imagePopup").style.display = "none";
+
+}
+
+</script>
 </body>
 </html>
 

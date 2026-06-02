@@ -1,2 +1,2 @@
 # My_portfolio
-which holds all the details related to my studeies ,skills,work etc.,.
+which holds all the details related to my studies ,skills,work etc.,.
